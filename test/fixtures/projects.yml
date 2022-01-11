@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  project_url: MyString
+  description: MyString
+  tech_stack: MyString
+
+two:
+  name: MyString
+  project_url: MyString
+  description: MyString
+  tech_stack: MyString
