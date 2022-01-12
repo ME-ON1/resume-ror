@@ -35,10 +35,10 @@
         <%= render 'shared/edit_section', title: "Exprience" do %>
             <%= f.fields_for :companies do |company| %>
               <%= render 'shared/input/experience', company: company %>
-                <%#<%= render 'shared/input/project', project: company.project %>%>
+                <%#<%= render 'shared/input/project', project: company.projects %>%>
                 <br />
-              <% end %>
-            <%#<%= render 'shared/input/buttons/add', label: "+ Add Projects", path: "/experience/project/new"  %></br>%>
+            <% end %>
+            <%#<%= render 'shared/input/buttons/add', label: "+ Add Projects", path: "/projects/new"  %></br>%>
             <%= render 'shared/input/buttons/add', label: "+ Add Exprience", path: "/companies/new" %>
         <% end %>
 

@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
   before_action :logged_in_user, only: [:new]
 
   def new
-    current_user.profile.companies.create
+      current_user.profile.companies.create
       puts current_user.profile , "shark tank"
       flash[:success] = "Education added."
       redirect_to edit_url

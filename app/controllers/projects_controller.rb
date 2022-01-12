@@ -12,7 +12,9 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+      current_user.profile.projects.create
+      flash[:success] = "Education added."
+      redirect_to edit_url
   end
 
   # GET /projects/1/edit
