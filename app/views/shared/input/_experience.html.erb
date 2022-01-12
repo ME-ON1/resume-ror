@@ -1,0 +1,8 @@
+<%= render 'shared/edit_sub_section' do %>
+    <%= company.text_field :name, value: company.object.name, placeholder: "Company Name" %><br/>
+    <%= company.text_field :position, value: company.object.position, placeholder: "Position" %><br/>
+    <%= company.date_field :start, value: company.object.start, placeholder: "Start date" %><br/>
+    <%= company.date_field :end, value: company.object.end, placeholder: "End date" %><br/>
+    <%= company.text_area :description, value: company.object.description, placeholder: "Description" %><br/>
+    <%= render 'shared/input/buttons/delete', type: company %>
+<% end %>

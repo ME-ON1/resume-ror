@@ -1,18 +1,13 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
 
-  # GET /companies or /companies.json
-  def index
-    @companies = Company.all
-  end
+  before_action :logged_in_user, only: [:new]
 
-  # GET /companies/1 or /companies/1.json
-  def show
-  end
-
-  # GET /companies/new
   def new
-    @company = Company.new
+    current_user.profile.companies.create
+      puts current_user.profile , "shark tank"
+      flash[:success] = "Education added."
+      redirect_to edit_url
   end
 
   # GET /companies/1/edit

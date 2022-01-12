@@ -11,7 +11,7 @@
         <%= render 'shared/edit_section', title: "Profile details" do %>
             <%= f.text_field :name, value: @profile.name || current_user.name, placeholder: "Name" %><br/>
             <div class="flex items-center my-4">
-                <%= image_tag gravatar_url_for(current_user), 
+                <%= image_tag gravatar_url_for(current_user),
                     id: "image-preview", style:"max-width:200px"
                 %>
             </div>
@@ -21,15 +21,25 @@
             <p>Career Highlights</p>
             <%= f.text_field :career_highlights, value: concat_str_with_comma(@profile.career_highlights), placeholder: "Career highlights" %>
             <%= render 'shared/multiple_inputs_message' %>
-            
+
             <p>Primary Skills</p>
             <%= f.text_field :primary_skills, value: concat_str_with_comma(@profile.primary_skills), placeholder: "Primary skills" %>
             <%= render 'shared/multiple_inputs_message' %>
-            
+
             <p>Secondary Skills</p>
             <%= f.text_field :secondary_skills, value: concat_str_with_comma(@profile.secondary_skills), placeholder: "Secondary skills" %>
             <%= render 'shared/multiple_inputs_message' %>
-            
+
+        <% end %>
+
+        <%= render 'shared/edit_section', title: "Exprience" do %>
+            <%= f.fields_for :companies do |company| %>
+              <%= render 'shared/input/experience', company: company %>
+                <%#<%= render 'shared/input/project', project: company.project %>%>
+                <br />
+              <% end %>
+            <%#<%= render 'shared/input/buttons/add', label: "+ Add Projects", path: "/experience/project/new"  %></br>%>
+            <%= render 'shared/input/buttons/add', label: "+ Add Exprience", path: "/companies/new" %>
         <% end %>
 
         <%= render 'shared/edit_section', title: "Education" do %>
@@ -38,7 +48,7 @@
             <% end %><br />
             <%= render 'shared/input/buttons/add', label: "+ Add Education", path: "/educations/new" %>
         <% end %>
-        
+
     <% end %>
 
 </main>

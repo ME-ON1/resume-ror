@@ -2,11 +2,16 @@
 
 <main class="py-10 max-w-7xl mx-auto px-4 sm:px-8">
     <div class="flex justify-between align-center">
-        <h1 class="text-3xl"> 
+        <h1 class="text-3xl">
             Welcome, <span class="text-purple-600 font-semibold"><%= @user.name %><span>
         </h1>
+        <%#<%= debug @user %>%>
+          <%#<p>%>
+            <%#<%= @user %>%>
+          <%#</p>%>
         <%= render 'shared/input/buttons/secondary', color: "purple", label: "Edit", href: edit_url %>
+        <%#<%= render 'shared/input/buttons/secondary', color: "purple", label: "Copy link", href: profile_url %>%>
     </div>
-    
+
     <%= render 'shared/profile/preview', profile: @user.profile %>
 </main>

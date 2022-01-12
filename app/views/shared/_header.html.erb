@@ -9,14 +9,14 @@
                     <% if logged_in? %>
                         <div class="md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <%= render 'shared/input/buttons/primary', 
-                                    color: "purple", 
-                                    label: "Log out", 
-                                    href: logout_path, 
+                                <%= render 'shared/input/buttons/primary',
+                                    color: "purple",
+                                    label: "Log out",
+                                    href: logout_path,
                                     method: "delete" %>
                             </div>
                         </div>
-                    <% end %>    
+                    <% end %>
                 </div>
             </div>
         </div>

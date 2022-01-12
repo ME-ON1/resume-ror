@@ -14,5 +14,5 @@ module ProfilesHelper
         params[:secondary_skills] = get_array_from_comma_separated_string(params[:secondary_skills])
         params
     end
-    
+
 end

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :companies
-  resources :projects
   root   'home#index'
   get    '/signup' => 'signup#index'
   post   '/signup' => 'signup#create'
@@ -9,6 +7,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :profiles , only: [:update]
+  resources :profiles , only: [:update, :show ]
+  resources :companies, only: [:new, :edit, :delete]
+  resources :project, only: [:new, :edit, :delete]
   resources :educations , only: [:new]
 end
