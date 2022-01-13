@@ -7,7 +7,7 @@ class CreateCompanies < ActiveRecord::Migration[6.1]
       t.date :start
       t.date :end
 
-      t.belongs_to :profile, index: {unique: true }, foreign_key: true
+      t.belongs_to :profile, index:  true , foreign_key: true
       t.timestamps
     end
   end
