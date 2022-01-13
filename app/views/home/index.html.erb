@@ -3,10 +3,10 @@
 <main class="py-10 max-w-7xl mx-auto px-4 sm:px-8">
     <div class="flex justify-between align-center">
         <h1 class="text-3xl">
-            Welcome, <span class="text-purple-600 font-semibold"><%= @user.name %><span>
+            Welcome, <span class="text-purple-600 font-semibold"><%= @user.profile.name %><span>
         </h1>
         <div class="justify-end">
-        <% if current_user.id == @user.id %>
+        <% if logged_in? and current_user.id == @user.id %>
           <%= render 'shared/input/buttons/secondary', color: "purple", label: "Edit", href: edit_url %>
           <%= render 'shared/input/buttons/secondary', color: "purple", label: "Copy link", href: "/profiles/#{@user.id}" %>
         <%end %>

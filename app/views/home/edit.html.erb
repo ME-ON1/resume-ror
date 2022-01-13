@@ -16,7 +16,7 @@
               <% else %>
                 <%= image_tag gravatar_url_for(current_user), id: "image-preview", style: "max-width:200px" %>
               <%end %>
-              <%= f.file_field :imagei, accept: "image/*", multiple: false, class: "flex-shrink-0 justify-end px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-blue-200" %>
+              <%= f.file_field :image, accept: "image/*", multiple: false, class: "flex-shrink-0 justify-end px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-blue-200" %>
             </div>
             <%= f.text_field :job_title, value: @profile.job_title, placeholder: "Job title" %><br/>
             <%= f.text_field :total_experience, value: @profile.total_experience, placeholder: "Total experience" %><br/>
