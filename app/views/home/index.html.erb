@@ -5,8 +5,10 @@
         <h1 class="text-3xl">
             Welcome, <span class="text-purple-600 font-semibold"><%= @user.name %><span>
         </h1>
-        <%= render 'shared/input/buttons/secondary', color: "purple", label: "Edit", href: edit_url %>
-        <%#<%= render 'shared/input/buttons/secondary', color: "purple", label: "Copy link", href: profile_url %>%>
+        <% if logged_in? %>
+          <%= render 'shared/input/buttons/secondary', color: "purple", label: "Edit", href: edit_url %>
+          <%= render 'shared/input/buttons/secondary', color: "purple", label: "Copy link", href: "/profiles/#{@user.id}" %>
+        <%end %>
     </div>
 
     <%= render 'shared/profile/preview', profile: @user.profile %>

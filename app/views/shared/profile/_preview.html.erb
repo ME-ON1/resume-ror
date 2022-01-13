@@ -4,8 +4,8 @@
         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-md rounded-lg mt-20">
             <div class="px-6">
                 <div class="flex flex-wrap justify-center mb-10">
-                  <% if current_user.profile.image %>
-                    <%= image_tag current_user.profile.image,
+                  <% if profile.image.respond_to?(:url)  %>
+                    <%= image_tag profile.image,
                         id: "image-preview", style:"max-width:200px",
                         class: "shadow-xl rounded-full absolute w-1/2 transform -translate-y-1/2"
                       %>

@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 
   def edit
     logged_in_user
+    puts params.inspect, "params"
     if current_user
         @profile = current_user.profile
     end

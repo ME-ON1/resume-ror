@@ -34,14 +34,17 @@
             <%= render 'shared/multiple_inputs_message' %>
 
         <% end %>
-
+        <%= debug @profile %>
+        <%= @profle %>
         <%= render 'shared/edit_section', title: "Exprience" do %>
             <%= f.fields_for :companies do |company| %>
               <%= render 'shared/input/experience', company: company %>
-                <%#<%= render 'shared/input/project', project: company.projects %>%>
+                <%#<%= f.fields_for :project  do |project| %>%>
+                  <%#<%= render 'shared/input/project', project: project %>%>
+                <%#<% end %>%>
                 <br />
+                <%= render 'shared/input/buttons/add', label: "+ Add Projects", path: "/projects/#{company.object.id}"  %></br>
             <% end %>
-            <%#<%= render 'shared/input/buttons/add', label: "+ Add Projects", path: "/projects/new"  %></br>%>
             <%= render 'shared/input/buttons/add', label: "+ Add Exprience", path: "/companies/new" %>
         <% end %>
 

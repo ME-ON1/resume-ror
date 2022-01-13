@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
 
+  before_action :logged_in_user, only: [:new]
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -12,9 +13,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-      current_user.profile.projects.create
+      puts "hey im here"
+      current_user.profile.projects
       flash[:success] = "Education added."
-      redirect_to edit_url
+      #redirect_to edit_url
   end
 
   # GET /projects/1/edit

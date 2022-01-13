@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get    '/projects/:id' => 'projects#new'
 
   resources :profiles , only: [:update, :show ]
   resources :companies, only: [:new, :edit, :delete]
-  resources :projects, only: [:new, :edit, :delete]
+  resources :projects, only: [:new]
   resources :educations , only: [:new]
 end
