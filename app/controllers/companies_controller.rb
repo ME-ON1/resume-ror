@@ -5,7 +5,6 @@ class CompaniesController < ApplicationController
 
   def new
       current_user.profile.companies.create
-      puts current_user.profile , "shark tank"
       flash[:success] = "Education added."
       redirect_to edit_url
   end

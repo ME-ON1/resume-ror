@@ -5,6 +5,4 @@
     <%= company.date_field :end, value: company.object.end, placeholder: "End date" %><br/>
     <%= company.text_area :description, value: company.object.description, placeholder: "Description" %><br/>
     <%= render 'shared/input/buttons/delete', type: company %>
-    <%= debug company %>
-    <%= company %>
 <% end %>

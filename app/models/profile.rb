@@ -5,6 +5,13 @@ class Profile < ApplicationRecord
     accepts_nested_attributes_for(:companies, reject_if: :reject_companies_create, allow_destroy: true)
     has_one_attached :image
 
+    has_many(:projects, dependent: :destroy)
+    accepts_nested_attributes_for :projects
+
+    def reject_project_create
+      project[:name].blank? or project[:project_url].blank? or project[:description].blank? or project[:tech_stack].blank?
+    end
+
     belongs_to :user
 
     def reject_companies_create(companies)
